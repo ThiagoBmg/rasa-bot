@@ -1,0 +1,17 @@
+version: '3.1'
+intents:
+- init_conversation
+responses:
+  utter_init_conversation2:
+  - text: Como vai?
+  utter_init_conversation:
+  - text: E ai como vai?
+  - text: Oie
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- action_hello_world
+- init_conversation2
+- utter_init_conversation
+- utter_init_conversation2
