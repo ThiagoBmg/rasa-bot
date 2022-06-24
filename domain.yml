@@ -4,11 +4,15 @@ intents:
   - init_conversation
 
 responses:
-  utter_init_conversation2:
-    - text: Como vai?
   utter_init_conversation:
     - text: E ai como vai?
-    - text: Oie
+    - text: Oie, td bem?
+    - text: Oii, tudo bem?
+    - text: E ai! tudo certo?
+
+  utter_opcao_atendimento:
+    - text: Qual produto/serviço você tem interesse?
+    
 
 session_config:
   session_expiration_time: 60
@@ -16,6 +20,5 @@ session_config:
 
 actions:
   - action_github
-  - init_conversation2
   - utter_init_conversation
-  - utter_init_conversation2
+  - utter_opcao_atendimento

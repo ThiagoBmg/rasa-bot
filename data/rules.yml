@@ -1,8 +1,9 @@
 version: "3.1"
 
 rules:
-- rule: Registrar um teste 
+- rule: Buscando Repositórios no Github
   steps:
   - intent: init_conversation
   - action: utter_init_conversation
+  - action: utter_opcao_atendimento
   - action: action_github
