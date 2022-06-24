@@ -3,3 +3,5 @@
 .rasa/cache/*
 
 models/*
+
+*__pycache__/*

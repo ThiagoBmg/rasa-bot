@@ -7,6 +7,7 @@ APScheduler==3.7.0
 astunparse==1.6.3
 async-timeout==3.0.1
 attrs==21.2.0
+autopep8==1.6.0
 bidict==0.22.0
 boto3==1.24.16
 botocore==1.27.16
@@ -71,6 +72,7 @@ protobuf==3.19.4
 psycopg2-binary==2.9.3
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
+pycodestyle==2.8.0
 pycparser==2.21
 pydot==1.4.2
 PyJWT==2.1.0
@@ -81,6 +83,7 @@ pyrsistent==0.18.1
 pyTelegramBotAPI==4.6.0
 python-crfsuite==0.9.8
 python-dateutil==2.8.2
+python-decouple==3.6
 python-engineio==4.3.2
 python-socketio==5.6.0
 pytz==2021.3
@@ -124,6 +127,7 @@ tensorflow-text==2.7.3
 termcolor==1.1.0
 terminaltables==3.1.10
 threadpoolctl==3.1.0
+toml==0.10.2
 toolz==0.11.2
 tqdm==4.64.0
 twilio==6.50.1

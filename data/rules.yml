@@ -5,4 +5,4 @@ rules:
   steps:
   - intent: init_conversation
   - action: utter_init_conversation
-  - action: action_hello_world
+  - action: action_github
