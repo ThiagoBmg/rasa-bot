@@ -9,3 +9,13 @@ stories:
             entities:
               - name: thiago
       - action: action_greet_user
+
+  - story: bye
+    steps:
+      - intent: bye
+      - action: action_bye
+
+  - story: thank
+    steps:
+      - intent: thank
+      - action: utter_you_are_welcome

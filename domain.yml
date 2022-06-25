@@ -1,7 +1,8 @@
 version: "3.1"
 
 intents:
-  - greet # general
+  # GENERAL
+  - greet
   - bye
   - thank
   - deny
@@ -9,12 +10,15 @@ intents:
   - react_positive
   - react_negative
   - explain
-  - faq_bot_funcionalidades # faq
+  # FAQ
+  - faq_bot_funcionalidades
   - faq_sobre_idade
   - faq_sobre_email
+  - faq_sobre_nome
   - faq_sobre_telefone
   - faq_sobre_links
-  - enter_data # nlu
+  # NLU
+  - enter_data
 
 responses:
   # default responses
@@ -36,11 +40,20 @@ responses:
     - text: Certo, valeuu! 😄
     - text: Obrigado! 👌
     - text: valeu 😄
+  utter_you_are_welcome:
+    - text: Estou aqui, caso precise
+    - text: Conta comigo!
+    - text: Magina, estou por aqui!
+
   utter_bye:
     - text: Tchau!
     - text: Adeus!
     - text: Até logo!
     - text: Thau, nos vemos em breve!
+  utter_bye_name:
+    - text: Tchau {name}, até mais!
+    - text: thauzinho {name}, nos vemos em breve!
+    - text: ok, tchau {name}
   utter_canthelp:
     - text: Desculpe, eu não posso te ajudar agora... tente mais tarde
     - text: Ops, não estou conseguindo processar sua mensagem. Tente mais tarde
@@ -51,6 +64,9 @@ responses:
     - text: Epa, parece que eu ainda não aprendi isso 🤷... tente reformular o seu texto.
 
   # faq responses
+  utter_faq_name:
+    - text: Meu nome é {name}
+    - text: Eu me chamo {name}
   utter_faq_email:
     - text: O meu e-mail é {email}.
     - text: esta na mão! {email}.
@@ -60,10 +76,12 @@ responses:
     - text: Atualmente tenho {age} anos.
   utter_faq_phone:
     - text: O meu telefone é {phone}.
-    - text: Me chama la no whatsapp :), meu número é esse aqui {phone}
+    - text: Me chama la no whatsapp, meu número é esse aqui {phone}
     - text: Esta na mão! {phone}
   utter_faq_links:
     - text: Segue os links disponíveis {links}
+  utter_faq_bot_funcionalidades:
+    - text: Eu posso te passar algumas informações sobre mim... Utilizo IA para tentar te endender melhor.
 
 slots:
   name:
@@ -77,10 +95,12 @@ slots:
 
 actions:
   - action_greet_user
+  - action_get_name
   - action_get_email
   - action_get_age
   - action_get_phone
   - action_get_links
+  - action_bye
 
 entities:
   - name

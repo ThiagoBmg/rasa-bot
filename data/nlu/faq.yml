@@ -4,6 +4,8 @@ nlu:
   # intents
   - intent: faq_bot_funcionalidades
     examples: |
+      - oq vc faz
+      - o que vc faz? 
       - como você funciona
       - como você funciona
       - quais as suas funcionalidades 
@@ -11,6 +13,14 @@ nlu:
       - o que você consegue fazer
       - seu funcinamento
       - sua funcionalidade
+  - intent: faq_sobre_nome
+    examples: |
+      - qual é seu nome?
+      - como você se chama?
+      - como e seu nome
+      - como vc se chama
+      - qual seu nome
+      - voce se chama como?
   - intent: faq_sobre_idade
     examples: |
       - qual a sua idade?
@@ -19,6 +29,10 @@ nlu:
       - quantos anos ele tem
       - me fala sua idade
       - quantos anos vc tem?
+      - ok, mas quantos anos vc tem?
+      - ok, mas quantos anos você tem?
+      - ok, mas qual é sua idade?
+      - blz, mas qual é sua idade?
   - intent: faq_sobre_email
     examples: |
       - qual o seu e-mail?
@@ -29,6 +43,8 @@ nlu:
       - me dia o seu email
       - quero entrar em contato via email
       - quero entrar em contato via e-mail
+      - ok, mas qual é seu e-mail?
+      - hmm, qual é o seu e-mail?
   - intent: faq_sobre_telefone
     examples: |
       - qual o seu telefone?
@@ -39,6 +55,10 @@ nlu:
       - quero entrar em contato via whatsapp
       - quero entrar em contato via celular
       - quero te ligar por celular
+      - ok, mas qual é seu celular
+      - ok, mas qual é seu telefone
+      - certo, qual é seu numero
+      - certo, qual é seu whatsapp
   - intent: faq_sobre_links
     examples: |
       - qual o seu linkedin?
@@ -46,7 +66,7 @@ nlu:
       - qual o seu site? 
       - quais os seus links
       - onde posso te encontrar
-      - onde te encontro? 
+      - onde te encontro?
 
   # synonym
   - synonym: email

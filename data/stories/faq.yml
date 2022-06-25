@@ -44,3 +44,34 @@ stories:
       - action: action_greet_user
       - intent: faq_sobre_links
       - action: action_get_links
+
+  - story: get name 
+    steps:
+      - or:
+          - intent: greet
+          - intent: enter_data
+            entities:
+              - name: thiago
+      - action: action_greet_user
+      - intent: faq_sobre_nome
+      - action: action_get_name
+
+  - story: get funcionalidades
+    steps:
+    - or:
+        - intent: greet
+        - intent: enter_data
+          entities:
+            - name: thiago
+    - action: action_greet_user
+    - intent: faq_bot_funcionalidades
+    - action: utter_faq_bot_funcionalidades
+
+  - story: get email + get phone
+    steps:
+    - intent: greet
+    - action: action_greet_user
+    - intent: faq_sobre_email
+    - action: action_get_email
+    - intent: faq_sobre_telefone
+    - action: action_get_phone
