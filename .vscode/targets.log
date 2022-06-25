@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jun 24 18:33:47 2022
+# Make data base, printed on Fri Jun 24 20:38:03 2022
 
 # Variables
 
@@ -125,7 +125,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2212371
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2532436
 # automatic
 %F = $(notdir $%)
 # environment
@@ -157,7 +157,7 @@ VSCODE_CODE_CACHE_PATH = /home/thiago/.config/Code/CachedData/30d9c6cd9483b2cc58
 # environment
 LOGNAME = thiago
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # environment
@@ -191,7 +191,7 @@ SHLVL = 0
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-2d257f7e-b7df-4814-8ce1-7609a32a6752.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-98969e83-3269-437e-aa41-515a5b7de23c.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -230,8 +230,6 @@ MFLAGS = -pqrR
 GDK_BACKEND = x11
 # environment
 LC_PAPER = pt_BR.UTF-8
-# environment
-NO_AT_BRIDGE = 1
 # environment
 LC_IDENTIFICATION = pt_BR.UTF-8
 # environment
@@ -273,9 +271,9 @@ LC_ADDRESS = pt_BR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 140744
+VSCODE_PID = 2532485
 # variable set hash-table stats:
-# Load=131/1024=13%, Rehash=0, Collisions=25/156=16%
+# Load=130/1024=13%, Rehash=0, Collisions=25/155=16%
 
 # Pattern-specific Variable Values
 
@@ -283,9 +281,9 @@ VSCODE_PID = 140744
 
 # Directories
 
-# . (device 2050, inode 11807315): 22 files, no impossibilities.
+# . (device 2050, inode 11807315): 24 files, no impossibilities.
 
-# 22 files, no impossibilities in 1 directories.
+# 24 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -299,11 +297,11 @@ all:
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has not been updated.
- 
 
 train:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 5):
 	rm -rf ./models/*
@@ -312,7 +310,7 @@ train:
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-24 18:33:29.150098993
+#  Last modified 2022-06-24 18:34:28.378772889
 #  File has been updated.
 #  Successfully updated.
 
@@ -338,12 +336,12 @@ build:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 29 / storage = 251 B / avg = 8 B
-# current buf: size = 8162 B / used = 251 B / count = 29 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 31 / storage = 266 B / avg = 8 B
+# current buf: size = 8162 B / used = 266 B / count = 31 / avg = 8 B
 
-# strcache performance: lookups = 35 / hit rate = 17%
+# strcache performance: lookups = 37 / hit rate = 16%
 # hash-table stats:
-# Load=29/8192=0%, Rehash=0, Collisions=1/35=3%
-# Finished Make data base on Fri Jun 24 18:33:47 2022
+# Load=31/8192=0%, Rehash=0, Collisions=1/37=3%
+# Finished Make data base on Fri Jun 24 20:38:03 2022
 
  

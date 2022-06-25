@@ -3,4 +3,4 @@ build:
 	pip install --upgrade pip && pip install -r requirements.txt
 train: 
 	rm -rf ./models/*
-	rasa train 
+	rasa train && rasa interactive

@@ -1,24 +1,56 @@
 version: "3.1"
-
 intents:
   - init_conversation
+  - responder_agradecimento
+  - sobre
+  - github_repositorios
+  - github_repositorios/quantidade_repositorios
+  - cancel
+
+entities:
+  - github
 
 responses:
   utter_init_conversation:
-    - text: E ai como vai?
-    - text: Oie, td bem?
-    - text: Oii, tudo bem?
-    - text: E ai! tudo certo?
+    - text: Oiii
+    - text: Oie
+    - text: Oieee :)
+    - text: Oizinhoooo :)
+    - text: oi
+    - text: olá
+    - text: oii
+    - text: opa
+  utter_github:
+    - text: "qual informação sobre o github vc gostaria de saber? "
+  utter_github_repositorios/quantidade_repositorios:
+    - text: atualmente ele tem 40 repositórios no github
+  utter_sobre:
+    - text: Eu sou o Bot Thiago! eu sou um projeto utilizando IA para te entender melhor!
 
-  utter_opcao_atendimento:
-    - text: Qual produto/serviço você tem interesse?
-    
+  utter_reponder_agradecimento:
+    - text: magina, estou à disposição!
+  utter_cancel:
+    - text: Tchau, até logo!
+  utter_ask:
+    - text: como eu posso te ajudar?
+    - text: o que vc deseja?
+    - text: manda ai, o que posso fazer por vc?
+    - text: diga... como eu posso te ajudar?
+    - text: digite o que vc deseja, eu estou aprendendo ainda... mas vou tentar entender
+    - text: como eu posso ajudar você hoje?
+  utter_recursao:
+    - text: posso te ajudar em mais alguma coisa?
+
+actions:
+  - utter_ask
+  - utter_cancel
+  - utter_github
+  - utter_github_quantidade_repositorios
+  - utter_init_conversation
+  - utter_sobre
+  - utter_recursao
+  - utter_reponder_agradecimento
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
-actions:
-  - action_github
-  - utter_init_conversation
-  - utter_opcao_atendimento
