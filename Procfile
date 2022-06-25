@@ -1,1 +1,1 @@
-web: make build && make api
+web: make api
