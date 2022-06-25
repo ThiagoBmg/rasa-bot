@@ -1,55 +1,35 @@
 version: "3.1"
-intents:
-  - init_conversation
-  - responder_agradecimento
-  - sobre
-  - github_repositorios
-  - github_repositorios/quantidade_repositorios
-  - cancel
 
-entities:
-  - github
+intents:
+  - greet
+  - enter_data
 
 responses:
-  utter_init_conversation:
-    - text: Oiii
-    - text: Oie
-    - text: Oieee :)
-    - text: Oizinhoooo :)
-    - text: oi
-    - text: olá
-    - text: oii
-    - text: opa
-  utter_github:
-    - text: "qual informação sobre o github vc gostaria de saber? "
-  utter_github_repositorios/quantidade_repositorios:
-    - text: atualmente ele tem 40 repositórios no github
-  utter_sobre:
-    - text: Eu sou o Bot Thiago! eu sou um projeto utilizando IA para te entender melhor!
+  utter_greet:
+    - text: Olá, meu nome é Thiago!
+    - text: Olá, eu sou o Thiago :).
+    - text: Oie, meu nome é Thiago.
+    - text: Oi, eu sou o Thiago, mas pode me chamr de bot :)
+  utter_greet_name:
+    - text: Oi, {name}!
+    - text: Oiee, {name}!
+    - text: Olá, {name}!
+    - text: Oiii, {name}!
+  utter_greet_noname:
+    - text: Olá!
+    - text: Oi!
 
-  utter_reponder_agradecimento:
-    - text: magina, estou à disposição!
-  utter_cancel:
-    - text: Tchau, até logo!
-  utter_ask:
-    - text: como eu posso te ajudar?
-    - text: o que vc deseja?
-    - text: manda ai, o que posso fazer por vc?
-    - text: diga... como eu posso te ajudar?
-    - text: digite o que vc deseja, eu estou aprendendo ainda... mas vou tentar entender
-    - text: como eu posso ajudar você hoje?
-  utter_recursao:
-    - text: posso te ajudar em mais alguma coisa?
+slots:
+  name:
+    type: text
+    influence_conversation: false
+    mappings: []
 
 actions:
-  - utter_ask
-  - utter_cancel
-  - utter_github
-  - utter_github_quantidade_repositorios
-  - utter_init_conversation
-  - utter_sobre
-  - utter_recursao
-  - utter_reponder_agradecimento
+  - action_greet_user
+
+entities:
+  - name
 
 session_config:
   session_expiration_time: 60

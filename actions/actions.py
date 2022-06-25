@@ -11,29 +11,32 @@ from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.types import DomainDict
+from rasa_sdk.events import (
+    SlotSet,
+    EventType,
+)
 
-from services.github import Github
-
-from config import GITHUB_USERNAME, FIRST_NAME
-
-
-class ActionGitHub(Action):
+class ActionGreetUser(Action):
+    """Greets the user with/without privacy policy"""
 
     def name(self) -> Text:
-        return "action_github"
+        return "action_greet_user"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        # buscando os dados no github
-        github = Github()
-        repositores = github.get_all_repositores(user=GITHUB_USERNAME)
-
-        # criando texto de resposta
-        text = f'O {FIRST_NAME} tem um total de {len(repositores)} repositórios... '
-
-        # enviando resposta para o bot
-        dispatcher.utter_message(text=text)
-
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> List[EventType]:
+        intent = tracker.latest_message["intent"].get("name")
+        name_entity = next(tracker.get_latest_entity_values("name"), None)
+        if intent == "greet" or (intent == "enter_data" and name_entity):
+            if name_entity and name_entity.lower() != "thiago":
+                dispatcher.utter_message(response="utter_greet_name", name=name_entity)
+                return []
+            else:
+                dispatcher.utter_message(response="utter_greet")
+                # return [SlotSet("shown_privacy", True)]
+                return []
         return []
