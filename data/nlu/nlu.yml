@@ -1,0 +1,8 @@
+version: "3.1"
+
+nlu:
+  - intent: enter_data
+    examples: |
+      - meu nome é [renan](name)
+      - me chamo [flavio roberto](name)
+      - [claudia raia](name)

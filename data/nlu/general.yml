@@ -1,0 +1,140 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - bom dia
+      - boa tarde
+      - boa noite
+      - ola
+      - olá
+      - oi
+      - oi? 
+      - oiie
+      - oi, me chamo [thiago](name)
+      - olá, meu nome é [robson](name)
+      - oi, meu nome é [cristian](name)
+      - bom dia, me chamo [rogerio](name)
+      - oi, bom dia eu sou o [flavio](name)
+      - oi eu sou o [robson](name)
+      - bom dia eu sou a [claudia](name)
+      - boa tarde eu sou a [flavia](name)
+      - boa noite eu sou a [gizele](name)
+      - olá eu sou a [clara](name)
+      - eai eu sou o [gustavo](name)
+      - eai meu nome é [rafael](name)
+      - eai meu nome e [richerd](name)
+
+  - intent: bye
+    examples: |
+      - tchau
+      - sair
+      - adeus
+      - finalizar conversa
+      - cala a boa 
+      - Tchau
+      - tcha-tchau
+      - bye was nice talking to you
+      - see you
+      - see you . bye
+      - take care
+      - then bye
+      - tlak to you later
+      - toodle-oo
+      - Exit
+      - Close this talk
+      - byr
+  - intent: thank
+    examples: |
+      - Certo. Obrigado
+      - Ok, Obrigado
+      - Obrigado
+      - ok, valeu
+      - valeu!
+      - muito obrigado
+      - valeuuu
+      - obrigado
+      - Thanks for that
+      - Thanks!
+      - amazing, thanks
+      - danke
+      - great thanks
+      - ok thanks
+      - ok thanks sara
+      - ok thanks!
+      - perfect thank you
+      - thanks you
+      - thanks!
+      - thankyou
+      - thnks
+      - thx
+  - intent: deny
+    examples: |
+      - eu não quero
+      - não aceito
+      - nao aceito
+      - recusado
+      - não quero
+      - eu nao quero 
+      - eu não aceito
+      - eu nao aceito
+      - eu recuso
+      - eu me recuso
+  - intent: affirm
+    examples: |
+      - aceito
+      - concordo
+      - ok
+      - OK
+      - ah, ok
+      - sim
+      - afirmativo
+      - positivo, por favor
+      - sim, positivo
+      - ah, sim
+      - hmm sim
+
+  - intent: react_positive
+    examples: |
+      - legal
+      - top
+      - curti
+      - gostei
+      - muito bom
+      - uau 
+      - fico feliz
+      - estou feliz
+      - você é demais
+      - você é top
+      - hahaha
+      - ha ha ha
+      - kkkkk
+      - kkk kk kk 
+      - isso é legal
+      - isso é divertido
+  - intent: react_negative
+    examples: |
+      - eu não concordo
+      - não estou legal
+      - estou me sentindo mau 
+      - não estou bem
+      - triste
+      - depressivo
+      - estou pra baixo 
+      - não estou de acordo
+      - nao concordo com isso
+      - eu nao concordo
+      - eu nao aceito
+
+  - intent: explain
+    examples: |
+      - poderia me explicar
+      - me explica
+      - oque? 
+      - ham?
+      - preciso que vc me explique
+      - preciso entender melhor
+      - quero entender melhor
+      - poderia me explicar melhor? 
+      - por favor me explique
+      - me explique
