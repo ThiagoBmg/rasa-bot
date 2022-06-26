@@ -4,7 +4,7 @@ build:
 	python -m spacy download pt_core_news_lg
 api:
 	make train
-	rasa run --endpoints endpoints.yml -p 8000 --cors "*"
+	rasa run --endpoints endpoints.yml -p 8000 --cors "*" --auth-token 0d0a3081bfff925160bbbe9755ad8c196ab51414
 train: 
 	rm -rf ./models/*
 	rasa train --config ./config/config-whiteSpace.yml

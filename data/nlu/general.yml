@@ -46,6 +46,8 @@ nlu:
       - Exit
       - Close this talk
       - byr
+      - ok, tchau
+      - 
   - intent: thank
     examples: |
       - Certo. Obrigado
@@ -70,7 +72,7 @@ nlu:
       - thankyou
       - thnks
       - thx
-  - intent: deny # TODO: implementar
+  - intent: deny
     examples: |
       - eu não quero
       - não aceito
@@ -82,7 +84,7 @@ nlu:
       - eu nao aceito
       - eu recuso
       - eu me recuso
-  - intent: affirm # TODO: implementar
+  - intent: affirm
     examples: |
       - aceito
       - concordo
@@ -95,7 +97,7 @@ nlu:
       - sim, positivo
       - ah, sim
       - hmm sim
-  - intent: react_positive # TODO: implementar
+  - intent: react_positive 
     examples: |
       - legal
       - top
@@ -113,7 +115,9 @@ nlu:
       - kkk kk kk 
       - isso é legal
       - isso é divertido
-  - intent: react_negative # TODO: implementar
+      - maravilha
+      - maravlha
+  - intent: react_negative 
     examples: |
       - eu não concordo
       - não estou legal

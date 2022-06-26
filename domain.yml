@@ -5,11 +5,11 @@ intents:
   - greet
   - bye
   - thank
-  - deny # TODO: implementar
-  - affirm # TODO: implementar
-  - react_positive # TODO: implementar
-  - react_negative # TODO: implementar
-  - explain # TODO: implementar
+  - deny
+  - affirm 
+  - react_positive 
+  - react_negative 
+  - explain
   # FAQ
   - faq_sobre_name 
   - faq_sobre_age 
@@ -24,7 +24,7 @@ intents:
   - chitchat_ask_isbot
   - chitchat_ask_ishuman
   - chitchat_ask_languagesbot
-  - chitchat_ask_time
+  - chitchat_ask_time # TODO: formatar hora e criar intent pra data
   - chitchat_ask_weather
   - chitchat_ask_whatismyname
   - chitchat_ask_whatspossible
@@ -38,12 +38,12 @@ intents:
 responses:
   # default responses
   utter_greet:
-    - text: Olá, meu nome é Thiago!
-    - text: Olá, eu sou o Thiago.
-    - text: Oie, meu nome é Thiago.
-    - text: Oi, eu sou o Thiago, mas pode me chamar de bot.
+    - text: Olá, meu nome é Thiago! 😄
+    - text: Olá, eu sou o Thiago. 🙃
+    - text: Oie, meu nome é Thiago. 😄
+    - text: Oi, eu sou o Thiago, mas pode me chamar de bot. 😄🤝
   utter_greet_name:
-    - text: Oi, {name}!
+    - text: Oi, {name}! 
     - text: Oiee, {name}!
     - text: Olá, {name}!
     - text: Oiii, {name}!
@@ -55,30 +55,47 @@ responses:
     - text: Certo, valeuu! 😄.
     - text: Obrigado! 👌.
     - text: valeu 😄.
+  utter_react_ok:
+    - text: Ok 👍.
+    - text: 😄👍.
+    - text: Ok.
+    - text: Hmmm, ok!
+    - text: Certo!
+    - text: Entendi 👍.
+    - text: Entendi.
+  utter_explain:
+    - text: O que você deseja saber? 🤔.
+    - text: O que você quer que eu te explique? 📚.
+  utter_react_positive:
+    - text: 😄.
+    - text: 😄👍.
+  utter_react_negative:
+    - text: 😞👍.
+    - text: 😞.
   utter_already_knew:
     - text: Aaa.. eu já sabia disso.
-    - text: Sim, eu sei.
-    - text: Hmmm, eu já sabia.
+    - text: Sim, eu sei. 
+    - text: Hmmm, eu já sabia. 👌
     - text: exato, eu sei disso.
-    - text: saquei, eu já sabia.
+    - text: saquei, eu já sabia. 👍
   utter_you_are_welcome:
     - text: Estou aqui, caso precise.
     - text: Conta comigo!
     - text: Magina, estou por aqui!
 
   utter_bye:
-    - text: Tchau!
+    - text: Tchau! 🤪
     - text: Adeus!
     - text: Até logo!
-    - text: Thau, nos vemos em breve!
+    - text: Se precisar, vou estar por aqui 🤖.
   utter_bye_name:
-    - text: Tchau {name}, até mais!
-    - text: thauzinho {name}, nos vemos em breve!
-    - text: ok, tchau {name}.
+    - text: Tchau {name}, até mais! 😊
+    - text: thauzinho {name}, nos falamos em breve!
+    - text: ok, tchau {name}. 😊
   utter_canthelp:
-    - text: Desculpe, eu não posso te ajudar agora... tente mais tarde.
+    - text: Desculpe, eu não posso te ajudar agora 🙄... tente mais tarde.
     - text: Ops, não estou conseguindo processar sua mensagem.
-    - text: Não posso te ajudar agora...
+    - text: Não posso te ajudar agora... 🙄😪
   utter_default:
     - text: Desculpe, eu não entendi o que você quis dizer 🤷. Poderia tentar me explicar de outra forma?
     - text: Hmmm, eu não entendi... poderia tentar novamente?
@@ -86,75 +103,75 @@ responses:
 
   # faq responses
   utter_faq_name:
-    - text: Meu nome é {name}.
-    - text: Eu me chamo {name}.
+    - text: Meu nome é {name}. 
+    - text: Eu me chamo {name}. 👋
   utter_faq_email:
-    - text: O meu e-mail é {email}.
-    - text: esta na mão! {email}.
-    - text: O email do {name} é esse daqui {email}.
+    - text: O meu e-mail é {email}. 📧
+    - text: esta na mão! {email}. 📧
+    - text: O email do {name} é esse daqui {email}. 📧
   utter_faq_work:
-    - text: Atualmente trabalho como {work_area} na {work}.
+    - text: Atualmente trabalho como {work_area} na {work}. 💻
   utter_faq_age:
-    - text: A minha idade atual é {age}.
+    - text: A minha idade atual é {age}. 
     - text: Atualmente tenho {age} anos.
   utter_faq_phone:
-    - text: O meu telefone é {phone}.
-    - text: Me chama la no whatsapp, meu número é esse aqui {phone}.
-    - text: Esta na mão! {phone}.
+    - text: O meu telefone é {phone}. 📞
+    - text: Me chama la no whatsapp, meu número é esse aqui {phone}. ☎️
+    - text: Esta na mão! {phone}. ☎️
   utter_faq_linkedin:
     - text: Este aqui é o meu linkedin {links}.
     - text: Aqui esta o link para o meu linkedin {links}.
   utter_faq_location:
-    - text: Atualemente eu vivo em {location}.
-    - text: Estou morando em {location}.
+    - text: Atualemente eu vivo em {location}. 📍🗺️
+    - text: Estou morando em {location}. 📍🗺️
 
   # chitchat responses
   utter_chitchat_howbuilt:
     - text: Eu posso te passar algumas informações sobre mim... Utilizo IA para tentar te endender melhor.
   utter_chitchat_howdoing:
-    - text: Estou bem!
+    - text: Estou bem! 👍
     - text: Tudo conforme o planejado por aqui!
-    - text: Tudo certo...
-    - text: Tudo uma maravilha!
-    - text: Tudo ótimo.
+    - text: Tudo certo... 👍
+    - text: Tudo uma maravilha! 
+    - text: Tudo ótimo. 👌
   utter_chitchat_isbot:
-    - text: Sim, eu sou um bot! Mas consigo te entender perfeitamente :) # TODO: colocar emoji
+    - text: Sim, eu sou um bot! Mas consigo te entender perfeitamente 😀
     - text: é... digamos que eu não tenho um corpo igual a você. E sou um pouquinho mais pra frente, se é que você me entende rsrs...
   utter_chitchat_ishuman:
-    - text: Eu não sou um humano! isso é muito coisa do passado rs
-    - text: Eu não sou humano.
-    - text: Eu não sou um humano.
+    - text: Eu não sou um humano! isso é muito coisa do passado. 😅
+    - text: Eu não sou humano. 🤖
+    - text: Eu não sou um humano....
   utter_chitchat_languagesbot:
-    - text: Eu só falo português, mas entendo inglês muito bem! apenas tenho que treinar mais o vocabulário...
+    - text: Eu só falo português, mas entendo inglês muito bem! apenas tenho que treinar mais o vocabulário... 🇧🇷
     - text: Eu falo apenas português mesmo...
-    - text: Eu ainda estou aprendendo outros idiomas, por enquanto eu falo apenas português
+    - text: Eu ainda estou aprendendo outros idiomas, por enquanto eu falo apenas português. 🇧🇷
   utter_chitchat_time:
-    - text: Aqui agora são {time}.
-    - text: O horario atual é {time}.
+    - text: Aqui agora são {time}. 🕐
+    - text: O horario atual é {time}. 🕐
   utter_chitchat_weather:
-    - text: hmm parece que vai chover em???
-    - text: hmm coloquem os casacosssss
+    - text: hmm parece que vai chover em??? ⛈️
+    - text: hmm coloquem os casacosssss 🌦️
     - text: aqui esta bem frio
     - text: aqui esta bem quente
-    - text: aaa toda hora muda o clima por aqui
+    - text: aaa toda hora muda o clima por aqui 😪
   utter_chitchat_whatismyname_name:
-    - text: O seu nome é {name}
-    - text: Voce se chama {name}
-    - text: Você se apresentou mais cedo... seu nome é {name}
-    - text: acho que seu nome é {name}, certo?
+    - text: O seu nome é {name}.
+    - text: Voce se chama {name}. 😉
+    - text: Você se apresentou mais cedo... seu nome é {name}. 😀
+    - text: acho que seu nome é {name}, certo? 🤔
   utter_chitchat_whatismyname_noname:
-    - text: Hmmm eu não sei... acho que ainda vc não me falou.
-    - text: Não sei o seu nome ainda, podemos nos conhcer melhor? 
+    - text: Hmmm eu não sei... 🤔 acho que ainda vc não me falou.
+    - text: 🤔💭... Não sei o seu nome ainda, podemos nos conhcer melhor? 
     - text: Não conheço você ainda... vamos conversar um pouco mais? 
   utter_chitchat_whatspossible:
     - text: Eu consigo entender o que os humanos tentam dizer... e apenas apresento as melhores opções que tenho para apresentar.
     - text: Consigo acionar gatilhos, realizar integrações, como por exemplo... enviar e-mails, alterar um documento, validar um formulário... por ai vai!
     - text: Eu diria que a cereja do bolo é o meu cerebro. Consigo fazer qualquer coisa que você me ensinar a fazer.
   utter_chitchat_whoami_name:
-    - text: Você é o {name}
+    - text: Seu nome é {name}, nos conhecemos recentemente. 😀
   utter_chitchat_whoami_noname:
-    - text: Eu não conheço você
-    - text: Eu não sei quem você é... mas essa é uma bela oportunidade pra gente se conhecer melhor, o que acha?
+    - text: Eu não conheço você... 🤨
+    - text: Eu não sei quem você é... mas essa é uma bela oportunidade pra gente se conhecer melhor 😋, o que acha? 🤔
   
 slots:
   name:

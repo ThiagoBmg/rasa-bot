@@ -203,7 +203,7 @@ class ActionGetLinks(Action):
 class ActionGetLocation(Action):
     def name(self) -> Text:
         return "action_get_location"
-
+    
     def run(
         self,
         dispatcher: CollectingDispatcher,

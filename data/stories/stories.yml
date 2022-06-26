@@ -24,3 +24,29 @@ stories:
     steps: 
       - intent: enter_data
       - action: action_greet_user
+  
+  - story: affirm
+    steps: 
+      - intent: affirm
+      - action: utter_react_positive
+
+  - story: react_positive
+    steps: 
+      - intent: react_positive
+      - action: utter_react_positive
+  
+  - story: react_negative
+    steps: 
+      - intent: react_negative
+      - action: utter_react_negative
+
+  - story: deny
+    steps: 
+      - intent: deny
+      - action: utter_react_ok
+
+  - story: explain
+    steps: 
+      - intent: explain
+      - action: utter_explain
+    
