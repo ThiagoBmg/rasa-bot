@@ -41,6 +41,12 @@ responses:
     - text: Certo, valeuu! 😄.
     - text: Obrigado! 👌.
     - text: valeu 😄.
+  utter_already_knew:
+    - text: Aaa.. eu já sabia disso.
+    - text: Sim, eu sei. 
+    - text: Hmmm, eu já sabia. 
+    - text: exato, eu sei disso.
+    - text: saquei, eu já sabia.
   utter_you_are_welcome:
     - text: Estou aqui, caso precise.
     - text: Conta comigo!

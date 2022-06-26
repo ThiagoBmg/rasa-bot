@@ -12,11 +12,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
-from rasa_sdk.events import (
-    SlotSet,
-    EventType,
-    UserUtteranceReverted
-)
+from rasa_sdk.events import SlotSet, EventType, UserUtteranceReverted
 from config import (
     EMAIL,
     FIRST_NAME,
@@ -24,7 +20,7 @@ from config import (
     PHONE,
     LINKEDIN,
     WORK,
-    WORK_AREA
+    WORK_AREA,
 )
 
 
@@ -48,25 +44,26 @@ class ActionGreetUser(Action):
         if intent == "greet" or (
             intent == "enter_data" and name_entity
         ):
+            nm = tracker.get_slot("name") or None
             if name_entity:
-                nm = tracker.get_slot("name") or None
                 if nm and nm == name_entity:
-                    text = ["Hmm, não é novidade!", "Eu sei, você já me disse isso :)"]
                     dispatcher.utter_message(
-                        text=text,
+                        response="utter_already_knew",
                     )
                 else:
                     dispatcher.utter_message(
                         response="utter_greet_name",
                         name=name_entity,
                     )
-
                 return [SlotSet(key="name", value=name_entity)]
+            elif nm:
+                dispatcher.utter_message(
+                    response="utter_greet_name",
+                    name=nm,
+                )
             else:
                 dispatcher.utter_message(response="utter_greet")
-                # return [SlotSet("shown_privacy", True)]
-                return []
-        return []
+            return []
 
 
 class ActionBye(Action):
@@ -158,10 +155,12 @@ class ActionGetAge(Action):
     ) -> List[EventType]:
         # intent = tracker.latest_message["intent"].get("name")
 
-        birth_dt = datetime.strptime(BIRTH_DT, '%d/%m/%Y').date()
+        birth_dt = datetime.strptime(BIRTH_DT, "%d/%m/%Y").date()
         today = date.today()
-        one_or_zero = ((today.month, today.day) <
-                       (birth_dt.month, birth_dt.day))
+        one_or_zero = (today.month, today.day) < (
+            birth_dt.month,
+            birth_dt.day,
+        )
         year_difference = today.year - birth_dt.year
         age = year_difference - one_or_zero
 
