@@ -100,6 +100,8 @@ nlu:
     examples: |
       - voce sabe quem eu sou?
       - vc me conhece?
+      - quem eu sou?
+      - quem sou eu? 
       - voce me conhece?
       - vc sabe quem sou eu? 
       - vc sabe quem eu sou?

@@ -10,10 +10,10 @@ train:
 	rasa train --config ./config/config-whiteSpace.yml
 interactive:
 	make train
-	rasa interactive
+	rasa interactive --config ./config/config-whiteSpace.yml
 shell:
 	make train 
-	rasa shell
+	rasa shell --config ./config/config-whiteSpace.yml
 test: 
 	rasa test core --stories ./tests/test_faq.yml --out results
 formatter:

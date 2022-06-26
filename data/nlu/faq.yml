@@ -3,6 +3,7 @@ version: "3.1"
 nlu:
   # intents
   # TODO: criar intenção de sobre resumo
+  # TODO: criar intenção de sobre estudos
   - intent: faq_sobre_name
     examples: |
       - qual é seu nome?
