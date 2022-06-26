@@ -43,8 +43,6 @@ class ActionGreetUser(Action):
         if intent == "greet" or (intent == "enter_data" and name_entity):
             nm = tracker.get_slot("name") or None
             if name_entity:
-                print(nm)
-                print(name_entity)
                 if nm and nm == name_entity:
                     dispatcher.utter_message(
                         response="utter_already_knew",
