@@ -11,16 +11,31 @@ intents:
   - react_negative
   - explain
   # FAQ
-  - faq_bot_funcionalidades
-  - faq_sobre_idade
-  - faq_sobre_email
-  - faq_sobre_nome
-  - faq_sobre_telefone
-  - faq_sobre_links
-  - faq_sobre_trabalho
-  # NLU
-  - enter_data
+  - faq_sobre_idade # TODO: remover e adicionar no chitchat
+  - faq_sobre_email # TODO: remover e adicionar no chitchat
+  - faq_sobre_nome # TODO: remover e adicionar no chitchat
+  - faq_sobre_telefone # TODO: remover e adicionar no chitchat
+  - faq_sobre_links # TODO: remover e adicionar no chitchat
+  - faq_sobre_trabalho # TODO: remover e adicionar no chitchat
+  # CHITCHAT
+  - chitchat_ask_howbuilt
+  - chitchat_ask_howdoing
+  - chitchat_ask_howold
+  - chitchat_ask_isbot
+  - chitchat_ask_ishuman
+  - chitchat_ask_languagesbot
+  - chitchat_ask_time
+  - chitchat_ask_weather
+  - chitchat_ask_whatismyname
+  - chitchat_ask_whatspossible
+  - chitchat_ask_wherefrom
+  - chitchat_ask_whoami
+  - chitchat_ask_whoisit
 
+  # NLU
+  - enter_data:
+      use_entities:
+        - name
 responses:
   # default responses
   utter_greet:
@@ -43,8 +58,8 @@ responses:
     - text: valeu 😄.
   utter_already_knew:
     - text: Aaa.. eu já sabia disso.
-    - text: Sim, eu sei. 
-    - text: Hmmm, eu já sabia. 
+    - text: Sim, eu sei.
+    - text: Hmmm, eu já sabia.
     - text: exato, eu sei disso.
     - text: saquei, eu já sabia.
   utter_you_are_welcome:
@@ -89,7 +104,9 @@ responses:
     - text: Esta na mão! {phone}.
   utter_faq_links:
     - text: Segue os links disponíveis {links}.
-  utter_faq_bot_funcionalidades:
+
+  # chitchat responses
+  utter_howbuilt:
     - text: Eu posso te passar algumas informações sobre mim... Utilizo IA para tentar te endender melhor.
 
 slots:

@@ -1,18 +1,9 @@
 version: "3.1"
 
+#  TODO: focar em intenções perguntas sobre mim
+
 nlu:
   # intents
-  - intent: faq_bot_funcionalidades
-    examples: |
-      - oq vc faz
-      - o que vc faz? 
-      - como você funciona
-      - como você funciona
-      - quais as suas funcionalidades 
-      - qual a usa funcionalidade
-      - o que você consegue fazer
-      - seu funcinamento
-      - sua funcionalidade
   - intent: faq_sobre_nome
     examples: |
       - qual é seu nome?

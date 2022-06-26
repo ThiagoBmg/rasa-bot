@@ -56,17 +56,6 @@ stories:
       - intent: faq_sobre_nome
       - action: action_get_name
 
-  - story: get funcionalidades
-    steps:
-      - or:
-          - intent: greet
-          - intent: enter_data
-            entities:
-              - name: thiago
-      - action: action_greet_user
-      - intent: faq_bot_funcionalidades
-      - action: utter_faq_bot_funcionalidades
-
   - story: get work
     steps:
       - or:

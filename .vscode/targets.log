@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Jun 25 17:09:02 2022
+# Make data base, printed on Sun Jun 26 00:35:41 2022
 
 # Variables
 
@@ -51,7 +51,7 @@ SNAP_DATA = /var/snap/code/99
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:55838
+JOURNAL_STREAM = 8:63678
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -69,6 +69,8 @@ USERNAME = thiago
 # environment
 MAKELEVEL := 0
 # environment
+MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
+# environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
@@ -79,7 +81,7 @@ _ = /snap/code/99/usr/share/code/code
 # environment
 LC_CTYPE = pt_BR.UTF-8
 # environment
-MANAGERPID = 2235
+MANAGERPID = 3598
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -95,7 +97,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/thiago-gomes:@/tmp/.ICE-unix/2470,unix/thiago-gomes:/tmp/.ICE-unix/2470
+SESSION_MANAGER = local/thiago-gomes:@/tmp/.ICE-unix/3946,unix/thiago-gomes:/tmp/.ICE-unix/3946
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -113,7 +115,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = dbafd36a1f8945f29d37d550232a53eb
+INVOCATION_ID = a2ffd4f8bb4d49228998e4cc2b67c10f
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/99/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -125,7 +127,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 587378
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4729
 # automatic
 %F = $(notdir $%)
 # environment
@@ -139,7 +141,7 @@ PWD = /home/thiago/Documents/myBot
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2432
+SSH_AGENT_PID = 3907
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -191,7 +193,7 @@ SHLVL = 0
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-23fc33e3-1e40-466b-8b1f-b37f461a3b64.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-e1588686-45a9-42b4-a4ba-3da86bd45c51.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -234,6 +236,8 @@ LC_PAPER = pt_BR.UTF-8
 LC_IDENTIFICATION = pt_BR.UTF-8
 # environment
 QT_ACCESSIBILITY = 1
+# environment
+DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
 # default
 MAKEFILES := 
 # environment
@@ -271,20 +275,20 @@ LC_ADDRESS = pt_BR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 587528
+VSCODE_PID = 4942
 # variable set hash-table stats:
-# Load=130/1024=13%, Rehash=0, Collisions=25/155=16%
+# Load=132/1024=13%, Rehash=0, Collisions=25/157=16%
 
 # Pattern-specific Variable Values
+ 
 
 # No pattern-specific variable values.
 
 # Directories
 
-# . (device 2050, inode 11807315): 23 files, no impossibilities.
- 
+# . (device 2050, inode 11807315): 27 files, no impossibilities.
 
-# 23 files, no impossibilities in 1 directories.
+# 27 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -299,18 +303,26 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
-train:
+api:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 5):
+	make train
+	rasa run --endpoints endpoints.yml -p 8000 --cors "*"
+
+train:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 8):
 	rm -rf ./models/*
 	rasa train
 
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-25 13:26:31.638402174
+#  Last modified 2022-06-25 19:34:25.850660375
 #  File has been updated.
 #  Successfully updated.
 
@@ -326,7 +338,7 @@ formatter:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 14):
+#  recipe to execute (from 'makefile', line 17):
 	black --verbose --config pyproject.toml actions tests
 
 # Not a target:
@@ -339,7 +351,7 @@ interactive:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 8):
+#  recipe to execute (from 'makefile', line 11):
 	make train
 	rasa interactive
 
@@ -347,24 +359,24 @@ shell:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 11):
+#  recipe to execute (from 'makefile', line 14):
 	make train
 	rasa shell
 
 # files hash-table stats:
-# Load=9/1024=1%, Rehash=0, Collisions=2/19=11%
+# Load=10/1024=1%, Rehash=0, Collisions=2/20=10%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 33 / storage = 302 B / avg = 9 B
-# current buf: size = 8162 B / used = 302 B / count = 33 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 38 / storage = 352 B / avg = 9 B
+# current buf: size = 8162 B / used = 352 B / count = 38 / avg = 9 B
 
-# strcache performance: lookups = 42 / hit rate = 21%
+# strcache performance: lookups = 48 / hit rate = 20%
 # hash-table stats:
-# Load=33/8192=0%, Rehash=0, Collisions=3/42=7%
-# Finished Make data base on Sat Jun 25 17:09:02 2022
+# Load=38/8192=0%, Rehash=0, Collisions=3/48=6%
+# Finished Make data base on Sun Jun 26 00:35:41 2022
 
  

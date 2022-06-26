@@ -17,7 +17,7 @@ nlu:
       - olá, meu nome é [robson](name)
       - oi, meu nome é [cristian](name)
       - bom dia, me chamo [rogerio](name)
-      - oi, bom dia eu sou o [flavio](name)
+      - oi, bom dia eu sou o [ricardo](name)
       - oi eu sou o [robson](name)
       - bom dia eu sou a [claudia](name)
       - boa tarde eu sou a [flavia](name)
@@ -26,7 +26,6 @@ nlu:
       - eai eu sou o [gustavo](name)
       - eai meu nome é [rafael](name)
       - eai meu nome e [richerd](name)
-
   - intent: bye
     examples: |
       - tchau
@@ -34,6 +33,7 @@ nlu:
       - adeus
       - finalizar conversa
       - cala a boa 
+      - cancelar
       - Tchau
       - tcha-tchau
       - bye was nice talking to you
@@ -95,7 +95,6 @@ nlu:
       - sim, positivo
       - ah, sim
       - hmm sim
-
   - intent: react_positive
     examples: |
       - legal
@@ -127,7 +126,6 @@ nlu:
       - nao concordo com isso
       - eu nao concordo
       - eu nao aceito
-
   - intent: explain
     examples: |
       - poderia me explicar
