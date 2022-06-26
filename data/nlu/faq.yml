@@ -50,6 +50,8 @@ nlu:
       - qual o seu telefone?
       - qual o seu whatsapp? 
       - qual o seu celular?
+      - qual o seu contato?
+      - me passa o seu contato
       - me passa o seu telefone
       - me diga o seu telefone
       - quero entrar em contato via whatsapp
@@ -67,6 +69,16 @@ nlu:
       - quais os seus links
       - onde posso te encontrar
       - onde te encontro?
+  - intent: faq_sobre_trabalho
+    examples: |
+      - aonde você trabalha? 
+      - aonde ele trabalha
+      - qual a sua profissao
+      - qual o seu trabalho
+      - vc trabalha com o que?
+      - você trabalha com o que? 
+      - voce trabalha aonde? 
+      - tu trabalha aonde? 
 
   # synonym
   - synonym: email

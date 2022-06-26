@@ -17,6 +17,7 @@ intents:
   - faq_sobre_nome
   - faq_sobre_telefone
   - faq_sobre_links
+  - faq_sobre_trabalho
   # NLU
   - enter_data
 
@@ -24,9 +25,9 @@ responses:
   # default responses
   utter_greet:
     - text: Olá, meu nome é Thiago!
-    - text: Olá, eu sou o Thiago :).
+    - text: Olá, eu sou o Thiago.
     - text: Oie, meu nome é Thiago.
-    - text: Oi, eu sou o Thiago, mas pode me chamr de bot :)
+    - text: Oi, eu sou o Thiago, mas pode me chamar de bot.
   utter_greet_name:
     - text: Oi, {name}!
     - text: Oiee, {name}!
@@ -36,12 +37,12 @@ responses:
     - text: Olá!
     - text: Oi!
   utter_awesome:
-    - text: Maravilha, muito obrigado 👍
-    - text: Certo, valeuu! 😄
-    - text: Obrigado! 👌
-    - text: valeu 😄
+    - text: Maravilha, muito obrigado 👍.
+    - text: Certo, valeuu! 😄.
+    - text: Obrigado! 👌.
+    - text: valeu 😄.
   utter_you_are_welcome:
-    - text: Estou aqui, caso precise
+    - text: Estou aqui, caso precise.
     - text: Conta comigo!
     - text: Magina, estou por aqui!
 
@@ -53,11 +54,11 @@ responses:
   utter_bye_name:
     - text: Tchau {name}, até mais!
     - text: thauzinho {name}, nos vemos em breve!
-    - text: ok, tchau {name}
+    - text: ok, tchau {name}.
   utter_canthelp:
-    - text: Desculpe, eu não posso te ajudar agora... tente mais tarde
-    - text: Ops, não estou conseguindo processar sua mensagem. Tente mais tarde
-    - text: Não posso te ajudar agora... :(
+    - text: Desculpe, eu não posso te ajudar agora... tente mais tarde.
+    - text: Ops, não estou conseguindo processar sua mensagem.
+    - text: Não posso te ajudar agora...
   utter_default:
     - text: Desculpe, eu não entendi o que você quis dizer 🤷. Poderia tentar me explicar de outra forma?
     - text: Hmmm, eu não entendi... poderia tentar novamente?
@@ -65,21 +66,23 @@ responses:
 
   # faq responses
   utter_faq_name:
-    - text: Meu nome é {name}
-    - text: Eu me chamo {name}
+    - text: Meu nome é {name}.
+    - text: Eu me chamo {name}.
   utter_faq_email:
     - text: O meu e-mail é {email}.
     - text: esta na mão! {email}.
     - text: O email do {name} é esse daqui {email}.
+  utter_faq_work:
+    - text: Atualmente trabalho como {work_area} na {work}.
   utter_faq_age:
     - text: A minha idade atual é {age}.
     - text: Atualmente tenho {age} anos.
   utter_faq_phone:
     - text: O meu telefone é {phone}.
-    - text: Me chama la no whatsapp, meu número é esse aqui {phone}
-    - text: Esta na mão! {phone}
+    - text: Me chama la no whatsapp, meu número é esse aqui {phone}.
+    - text: Esta na mão! {phone}.
   utter_faq_links:
-    - text: Segue os links disponíveis {links}
+    - text: Segue os links disponíveis {links}.
   utter_faq_bot_funcionalidades:
     - text: Eu posso te passar algumas informações sobre mim... Utilizo IA para tentar te endender melhor.
 
@@ -100,6 +103,7 @@ actions:
   - action_get_age
   - action_get_phone
   - action_get_links
+  - action_get_work
   - action_bye
 
 entities:

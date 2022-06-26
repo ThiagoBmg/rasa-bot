@@ -3,7 +3,7 @@ build:
 	pip install --upgrade pip && pip install -r requirements.txt
 api:
 	make train
-	rasa run --endpoints endpoints.yml -p 8000
+	rasa run --endpoints endpoints.yml -p 8000 --cors "*"
 train: 
 	rm -rf ./models/*
 	rasa train

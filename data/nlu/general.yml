@@ -11,6 +11,8 @@ nlu:
       - oi
       - oi? 
       - oiie
+      - eai fulano, meu nome é [vanessa](name)
+      - oi thiago, meu nome é [renata](name)
       - oi, me chamo [thiago](name)
       - olá, meu nome é [robson](name)
       - oi, meu nome é [cristian](name)

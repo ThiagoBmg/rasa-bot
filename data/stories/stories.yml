@@ -19,3 +19,8 @@ stories:
     steps:
       - intent: thank
       - action: utter_you_are_welcome
+  
+  - story: enter_data
+    steps: 
+      - intent: enter_data
+      - action: action_greet_user
