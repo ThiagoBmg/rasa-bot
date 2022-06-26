@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jun 26 00:35:41 2022
+# Make data base, printed on Sun Jun 26 03:52:48 2022
 
 # Variables
 
@@ -127,7 +127,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 4729
+GIO_LAUNCHED_DESKTOP_FILE_PID = 354629
 # automatic
 %F = $(notdir $%)
 # environment
@@ -193,7 +193,7 @@ SHLVL = 0
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-e1588686-45a9-42b4-a4ba-3da86bd45c51.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-be5d7601-845f-4518-b3af-12e3f6bf1c70.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -275,20 +275,19 @@ LC_ADDRESS = pt_BR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 4942
+VSCODE_PID = 354677
 # variable set hash-table stats:
 # Load=132/1024=13%, Rehash=0, Collisions=25/157=16%
 
 # Pattern-specific Variable Values
- 
 
 # No pattern-specific variable values.
 
 # Directories
 
-# . (device 2050, inode 11807315): 27 files, no impossibilities.
+# . (device 2050, inode 11807315): 26 files, no impossibilities.
 
-# 27 files, no impossibilities in 1 directories.
+# 26 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -303,11 +302,12 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
+ 
 api:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 5):
+#  recipe to execute (from 'makefile', line 6):
 	make train
 	rasa run --endpoints endpoints.yml -p 8000 --cors "*"
 
@@ -315,14 +315,14 @@ train:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 8):
+#  recipe to execute (from 'makefile', line 9):
 	rm -rf ./models/*
-	rasa train
+	rasa train --config ./config/config-spacyNPL.yml
 
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-25 19:34:25.850660375
+#  Last modified 2022-06-26 02:15:11.277048374
 #  File has been updated.
 #  Successfully updated.
 
@@ -333,12 +333,13 @@ build:
 #  recipe to execute (from 'makefile', line 2):
 	apt-get update && apt-get install -y --no-install-recommends libxmlsec1-dev
 	pip install --upgrade pip && pip install -r requirements.txt
+	python -m spacy download pt_core_news_lg
 
 formatter:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 17):
+#  recipe to execute (from 'makefile', line 18):
 	black --verbose --config pyproject.toml actions tests
 
 # Not a target:
@@ -351,7 +352,7 @@ interactive:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 11):
+#  recipe to execute (from 'makefile', line 12):
 	make train
 	rasa interactive
 
@@ -359,8 +360,8 @@ shell:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 14):
-	make train
+#  recipe to execute (from 'makefile', line 15):
+	make train 
 	rasa shell
 
 # files hash-table stats:
@@ -371,12 +372,12 @@ shell:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 38 / storage = 352 B / avg = 9 B
-# current buf: size = 8162 B / used = 352 B / count = 38 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 37 / storage = 341 B / avg = 9 B
+# current buf: size = 8162 B / used = 341 B / count = 37 / avg = 9 B
 
-# strcache performance: lookups = 48 / hit rate = 20%
+# strcache performance: lookups = 47 / hit rate = 21%
 # hash-table stats:
-# Load=38/8192=0%, Rehash=0, Collisions=3/48=6%
-# Finished Make data base on Sun Jun 26 00:35:41 2022
+# Load=37/8192=0%, Rehash=0, Collisions=3/47=6%
+# Finished Make data base on Sun Jun 26 03:52:48 2022
 
  

@@ -1,10 +1,8 @@
 version: "3.1"
 
-#  TODO: focar em intenções perguntas sobre mim
-
 nlu:
   # intents
-  - intent: faq_sobre_nome
+  - intent: faq_sobre_name
     examples: |
       - qual é seu nome?
       - como você se chama?
@@ -12,10 +10,24 @@ nlu:
       - como vc se chama
       - qual seu nome
       - voce se chama como?
-  - intent: faq_sobre_idade
+      - quem é você?
+      - qual o seu nome?
+      - qual u seu nome? 
+      - qual e o seu nome?
+      - como eu posso chamar voce?
+      - como é o seu nome? 
+      - aa ok, como e seu nome?
+      - entendi, como é seu nome?
+      - hmm como e seu nome? 
+      - como e seu nomes
+      - o que é voce
+      - oq e vc
+      - oq e voce 
+  - intent: faq_sobre_age
     examples: |
       - qual a sua idade?
       - qual sua idade
+      - quantos anos vc tem? 
       - quantos anos você tem
       - quantos anos ele tem
       - me fala sua idade
@@ -36,7 +48,7 @@ nlu:
       - quero entrar em contato via e-mail
       - ok, mas qual é seu e-mail?
       - hmm, qual é o seu e-mail?
-  - intent: faq_sobre_telefone
+  - intent: faq_sobre_phone
     examples: |
       - qual o seu telefone?
       - qual o seu whatsapp? 
@@ -52,15 +64,13 @@ nlu:
       - ok, mas qual é seu telefone
       - certo, qual é seu numero
       - certo, qual é seu whatsapp
-  - intent: faq_sobre_links
+  - intent: faq_sobre_linkedin
     examples: |
       - qual o seu linkedin?
-      - qual o seu github?
-      - qual o seu site? 
-      - quais os seus links
-      - onde posso te encontrar
-      - onde te encontro?
-  - intent: faq_sobre_trabalho
+      - legal, me passa seu linkedin
+      - qual o linkedin do thiago
+      - me passa o link do seu linkedin
+  - intent: faq_sobre_work
     examples: |
       - aonde você trabalha? 
       - aonde ele trabalha
@@ -69,8 +79,23 @@ nlu:
       - vc trabalha com o que?
       - você trabalha com o que? 
       - voce trabalha aonde? 
-      - tu trabalha aonde? 
-
+      - tu trabalha aonde?
+  - intent: faq_sobre_location
+    examples: |
+      - da onde você é?
+      - aonde vc mora? 
+      - aonde vc vive
+      - aonde vc vive atualmente
+      - aonde voce mora?
+      - de onde vc e 
+      - ok de onde vc e 
+      - hmm entendi, da onde vc é
+      - hm ok aonde vc mora? 
+      - de onde vc vem?
+      - aonde voce esta?
+      - aonde vc ta? 
+      - aonde você esta
+  
   # synonym
   - synonym: email
     examples: |

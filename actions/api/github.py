@@ -8,11 +8,7 @@ class Github:
 
     def get_languages_list(self, repositores: dict) -> dict:
         resp = set(
-            [
-                x.get("language")
-                for x in repositores
-                if x.get("language")
-            ]
+            [x.get("language") for x in repositores if x.get("language")]
         )
         return resp
 

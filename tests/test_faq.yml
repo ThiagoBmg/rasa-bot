@@ -1,0 +1,22 @@
+version: "3.1"
+stories:
+- story: greet + get email 1 (/home/thiago/Documents/myBot/tests/test_faq.yml)
+  steps:
+  - intent: greet
+  - action: action_greet_user
+  - action: utter_greet  # predicted: action_listen
+  - user: |-
+      qual é o seu e-mail
+  - action: action_listen  # predicted: utter_you_are_welcome
+  - intent: faq_sobre_email
+  - action: action_get_email
+- story: greet + get email 2 (/home/thiago/Documents/myBot/tests/test_faq.yml)
+  steps:
+  - intent: greet
+  - action: action_greet_user
+  - action: utter_greet_name  # predicted: action_listen
+  - user: |-
+      me fala seu email
+  - action: action_listen  # predicted: utter_you_are_welcome
+  - intent: faq_sobre_email
+  - action: action_get_email

@@ -70,7 +70,7 @@ nlu:
       - thankyou
       - thnks
       - thx
-  - intent: deny
+  - intent: deny # TODO: implementar
     examples: |
       - eu não quero
       - não aceito
@@ -82,7 +82,7 @@ nlu:
       - eu nao aceito
       - eu recuso
       - eu me recuso
-  - intent: affirm
+  - intent: affirm # TODO: implementar
     examples: |
       - aceito
       - concordo
@@ -95,7 +95,7 @@ nlu:
       - sim, positivo
       - ah, sim
       - hmm sim
-  - intent: react_positive
+  - intent: react_positive # TODO: implementar
     examples: |
       - legal
       - top
@@ -113,7 +113,7 @@ nlu:
       - kkk kk kk 
       - isso é legal
       - isso é divertido
-  - intent: react_negative
+  - intent: react_negative # TODO: implementar
     examples: |
       - eu não concordo
       - não estou legal
@@ -126,7 +126,7 @@ nlu:
       - nao concordo com isso
       - eu nao concordo
       - eu nao aceito
-  - intent: explain
+  - intent: explain # TODO: implementar
     examples: |
       - poderia me explicar
       - me explica

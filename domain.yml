@@ -5,22 +5,22 @@ intents:
   - greet
   - bye
   - thank
-  - deny
-  - affirm
-  - react_positive
-  - react_negative
-  - explain
+  - deny # TODO: implementar
+  - affirm # TODO: implementar
+  - react_positive # TODO: implementar
+  - react_negative # TODO: implementar
+  - explain # TODO: implementar
   # FAQ
-  - faq_sobre_idade # TODO: remover e adicionar no chitchat
-  - faq_sobre_email # TODO: remover e adicionar no chitchat
-  - faq_sobre_nome # TODO: remover e adicionar no chitchat
-  - faq_sobre_telefone # TODO: remover e adicionar no chitchat
-  - faq_sobre_links # TODO: remover e adicionar no chitchat
-  - faq_sobre_trabalho # TODO: remover e adicionar no chitchat
+  - faq_sobre_name 
+  - faq_sobre_age 
+  - faq_sobre_email
+  - faq_sobre_phone
+  - faq_sobre_linkedin 
+  - faq_sobre_work 
+  - faq_sobre_location
   # CHITCHAT
   - chitchat_ask_howbuilt
   - chitchat_ask_howdoing
-  - chitchat_ask_howold
   - chitchat_ask_isbot
   - chitchat_ask_ishuman
   - chitchat_ask_languagesbot
@@ -28,14 +28,13 @@ intents:
   - chitchat_ask_weather
   - chitchat_ask_whatismyname
   - chitchat_ask_whatspossible
-  - chitchat_ask_wherefrom
   - chitchat_ask_whoami
-  - chitchat_ask_whoisit
 
   # NLU
   - enter_data:
       use_entities:
         - name
+
 responses:
   # default responses
   utter_greet:
@@ -102,13 +101,61 @@ responses:
     - text: O meu telefone é {phone}.
     - text: Me chama la no whatsapp, meu número é esse aqui {phone}.
     - text: Esta na mão! {phone}.
-  utter_faq_links:
-    - text: Segue os links disponíveis {links}.
+  utter_faq_linkedin:
+    - text: Este aqui é o meu linkedin {links}.
+    - text: Aqui esta o link para o meu linkedin {links}.
+  utter_faq_location:
+    - text: Atualemente eu vivo em {location}.
+    - text: Estou morando em {location}.
 
   # chitchat responses
-  utter_howbuilt:
+  utter_chitchat_howbuilt:
     - text: Eu posso te passar algumas informações sobre mim... Utilizo IA para tentar te endender melhor.
-
+  utter_chitchat_howdoing:
+    - text: Estou bem!
+    - text: Tudo conforme o planejado por aqui!
+    - text: Tudo certo...
+    - text: Tudo uma maravilha!
+    - text: Tudo ótimo.
+  utter_chitchat_isbot:
+    - text: Sim, eu sou um bot! Mas consigo te entender perfeitamente :) # TODO: colocar emoji
+    - text: é... digamos que eu não tenho um corpo igual a você. E sou um pouquinho mais pra frente, se é que você me entende rsrs...
+  utter_chitchat_ishuman:
+    - text: Eu não sou um humano! isso é muito coisa do passado rs
+    - text: Eu não sou humano.
+    - text: Eu não sou um humano.
+  utter_chitchat_languagesbot:
+    - text: Eu só falo português, mas entendo inglês muito bem! apenas tenho que treinar mais o vocabulário...
+    - text: Eu falo apenas português mesmo...
+    - text: Eu ainda estou aprendendo outros idiomas, por enquanto eu falo apenas português
+  utter_chitchat_time:
+    - text: Aqui agora são {time}.
+    - text: O horario atual é {time}.
+  utter_chitchat_weather:
+    - text: hmm parece que vai chover em???
+    - text: hmm coloquem os casacosssss
+    - text: aqui esta bem frio
+    - text: aqui esta bem quente
+    - text: aaa toda hora muda o clima por aqui
+  utter_chitchat_whatismyname_name:
+    - text: O seu nome é {name}
+    - text: Voce se chama {name}
+    - text: Você se apresentou mais cedo... seu nome é {name}
+    - text: acho que seu nome é {name}, certo?
+  utter_chitchat_whatismyname_noname:
+    - text: Hmmm eu não sei... acho que ainda vc não me falou.
+    - text: Não sei o seu nome ainda, podemos nos conhcer melhor? 
+    - text: Não conheço você ainda... vamos conversar um pouco mais? 
+  utter_chitchat_whatspossible:
+    - text: Eu consigo entender o que os humanos tentam dizer... e apenas apresento as melhores opções que tenho para apresentar.
+    - text: Consigo acionar gatilhos, realizar integrações, como por exemplo... enviar e-mails, alterar um documento, validar um formulário... por ai vai!
+    - text: Eu diria que a cereja do bolo é o meu cerebro. Consigo fazer qualquer coisa que você me ensinar a fazer.
+  utter_chitchat_whoami_name:
+    - text: Você é o {name}
+  utter_chitchat_whoami_noname:
+    - text: Eu não conheço você
+    - text: Eu não sei quem você é... mas essa é uma bela oportunidade pra gente se conhecer melhor, o que acha?
+  
 slots:
   name:
     type: text
@@ -125,8 +172,12 @@ actions:
   - action_get_email
   - action_get_age
   - action_get_phone
-  - action_get_links
+  - action_get_linkedin
   - action_get_work
+  - action_get_location
+  - action_get_time
+  - action_whatismyname
+  - action_whoami
   - action_bye
 
 entities:

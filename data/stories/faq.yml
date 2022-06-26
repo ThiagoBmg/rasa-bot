@@ -1,7 +1,7 @@
 version: "3.1"
 
 stories:
-  - story: get email
+  - story: greet + get email
     steps:
       - or:
           - intent: greet
@@ -12,7 +12,7 @@ stories:
       - intent: faq_sobre_email
       - action: action_get_email
 
-  - story: get age
+  - story: greet + get age
     steps:
       - or:
           - intent: greet
@@ -20,10 +20,10 @@ stories:
             entities:
               - name: thiago
       - action: action_greet_user
-      - intent: faq_sobre_idade
+      - intent: faq_sobre_age
       - action: action_get_age
 
-  - story: get phone
+  - story: greet + get phone
     steps:
       - or:
           - intent: greet
@@ -31,10 +31,10 @@ stories:
             entities:
               - name: thiago
       - action: action_greet_user
-      - intent: faq_sobre_telefone
+      - intent: faq_sobre_phone
       - action: action_get_phone
 
-  - story: get links
+  - story: greet + get linkedin
     steps:
       - or:
           - intent: greet
@@ -42,10 +42,10 @@ stories:
             entities:
               - name: thiago
       - action: action_greet_user
-      - intent: faq_sobre_links
-      - action: action_get_links
+      - intent: faq_sobre_linkedin
+      - action: action_get_linkedin
 
-  - story: get name
+  - story: greet + get name
     steps:
       - or:
           - intent: greet
@@ -53,10 +53,10 @@ stories:
             entities:
               - name: thiago
       - action: action_greet_user
-      - intent: faq_sobre_nome
+      - intent: faq_sobre_name
       - action: action_get_name
 
-  - story: get work
+  - story: greet +  get work
     steps:
       - or:
           - intent: greet
@@ -64,14 +64,25 @@ stories:
             entities:
               - name: thiago
       - action: action_greet_user
-      - intent: faq_sobre_trabalho
+      - intent: faq_sobre_work
       - action: action_get_work
 
-  - story: get email + get phone
+  - story: greet + get email + get phone
     steps:
       - intent: greet
       - action: action_greet_user
       - intent: faq_sobre_email
       - action: action_get_email
-      - intent: faq_sobre_telefone
+      - intent: faq_sobre_phone
       - action: action_get_phone
+
+  - story: greet + get location
+    steps:
+      - or:
+          - intent: greet
+          - intent: enter_data
+            entities:
+              - name: thiago
+      - action: action_greet_user
+      - intent: faq_sobre_location
+      - action: action_get_location

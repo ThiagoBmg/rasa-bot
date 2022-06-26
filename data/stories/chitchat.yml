@@ -1,7 +1,7 @@
 version: "3.1"
 
 stories:
-  - story: greet + chitchat Ask How Built
+  - story: greet + chitchat_ask_howbuilt
     steps:
       - or:
           - intent: greet
@@ -10,8 +10,153 @@ stories:
               - name: thiago
       - action: action_greet_user
       - intent: chitchat_ask_howbuilt
-      - action: utter_howbuilt
-  - story: chitchat Ask How Built
+      - action: utter_chitchat_howbuilt
+
+  - story: chitchat_ask_howbuilt
     steps:
       - intent: chitchat_ask_howbuilt
-      - action: utter_howbuilt
+      - action: utter_chitchat_howbuilt
+
+  - story: greet + chitchat_ask_howdoing
+    steps:
+      - or:
+          - intent: greet
+          - intent: enter_data
+            entities:
+              - name: thiago
+      - action: action_greet_user
+      - intent: chitchat_ask_howdoing
+      - action: utter_chitchat_howdoing
+
+  - story: chitchat_ask_howdoing
+    steps:
+      - intent: chitchat_ask_howdoing
+      - action: utter_chitchat_howdoing
+
+  - story: greet + chitchat_ask_isbot
+    steps:
+      - or:
+          - intent: greet
+          - intent: enter_data
+            entities:
+              - name: thiago
+      - action: action_greet_user
+      - intent: chitchat_ask_isbot
+      - action: utter_chitchat_isbot
+
+  - story: chitchat_ask_isbot
+    steps:
+      - intent: chitchat_ask_isbot
+      - action: utter_chitchat_isbot
+  
+  - story: greet + chitchat_ask_ishuman
+    steps:
+      - or:
+          - intent: greet
+          - intent: enter_data
+            entities:
+              - name: thiago
+      - action: action_greet_user
+      - intent: chitchat_ask_ishuman
+      - action: utter_chitchat_ishuman
+
+  - story: chitchat_ask_ishuman
+    steps:
+      - intent: chitchat_ask_ishuman
+      - action: utter_chitchat_ishuman
+
+  - story: greet + chitchat_ask_languagesbot
+    steps:
+      - or:
+          - intent: greet
+          - intent: enter_data
+            entities:
+              - name: thiago
+      - action: action_greet_user
+      - intent: chitchat_ask_languagesbot
+      - action: utter_chitchat_languagesbot
+
+  - story: chitchat_ask_languagesbot
+    steps:
+      - intent: chitchat_ask_languagesbot
+      - action: utter_chitchat_languagesbot
+
+  - story: greet + chitchat_ask_time
+    steps:
+      - or:
+          - intent: greet
+          - intent: enter_data
+            entities:
+              - name: thiago
+      - action: action_greet_user
+      - intent: chitchat_ask_time
+      - action: action_get_time
+
+  - story: chitchat_ask_time
+    steps:
+      - intent: chitchat_ask_time
+      - action: action_get_time
+  
+  - story: greet + chitchat_ask_weather
+    steps:
+      - or:
+          - intent: greet
+          - intent: enter_data
+            entities:
+              - name: thiago
+      - action: action_greet_user
+      - intent: chitchat_ask_weather
+      - action: utter_chitchat_weather
+
+  - story: chitchat_ask_weather
+    steps:
+      - intent: chitchat_ask_weather
+      - action: utter_chitchat_weather
+
+  - story: greet + chitchat_ask_whatismyname
+    steps:
+      - or:
+          - intent: greet
+          - intent: enter_data
+            entities:
+              - name: thiago
+      - action: action_greet_user
+      - intent: chitchat_ask_whatismyname
+      - action: action_whatismyname
+  
+  - story: chitchat_ask_whatismyname
+    steps:
+      - intent: chitchat_ask_whatismyname
+      - action: action_whatismyname
+  
+  - story: greet + chitchat_ask_whatspossible
+    steps:
+      - or:
+          - intent: greet
+          - intent: enter_data
+            entities:
+              - name: thiago
+      - action: action_greet_user
+      - intent: chitchat_ask_whatspossible
+      - action: utter_chitchat_whatspossible
+
+  - story: chitchat_ask_whatspossible
+    steps:
+      - intent: chitchat_ask_whatspossible
+      - action: utter_chitchat_whatspossible
+  
+  - story: greet + chitchat_ask_whoami
+    steps:
+      - or:
+          - intent: greet
+          - intent: enter_data
+            entities:
+              - name: thiago
+      - action: action_greet_user
+      - intent: chitchat_ask_whoami
+      - action: action_whoami
+
+  - story: chitchat_ask_whoami
+    steps:
+      - intent: chitchat_ask_whoami
+      - action: action_whoami

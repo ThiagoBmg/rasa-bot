@@ -1,5 +1,5 @@
 [tool.black]
-line-length = 70
+line-length = 76
 target-version = ['py38']
 exclude = '''
 (

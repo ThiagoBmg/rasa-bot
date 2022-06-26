@@ -21,6 +21,7 @@ from config import (
     LINKEDIN,
     WORK,
     WORK_AREA,
+    LOCATION,
 )
 
 
@@ -37,13 +38,9 @@ class ActionGreetUser(Action):
         domain: DomainDict,
     ) -> List[EventType]:
         intent = tracker.latest_message["intent"].get("name")
-        name_entity = next(
-            tracker.get_latest_entity_values("name"), None
-        )
+        name_entity = next(tracker.get_latest_entity_values("name"), None)
 
-        if intent == "greet" or (
-            intent == "enter_data" and name_entity
-        ):
+        if intent == "greet" or (intent == "enter_data" and name_entity):
             nm = tracker.get_slot("name") or None
             if name_entity:
                 if nm and nm == name_entity:
@@ -165,9 +162,7 @@ class ActionGetAge(Action):
         age = year_difference - one_or_zero
 
         # age = 1
-        dispatcher.utter_message(
-            response="utter_faq_age", age=str(age)
-        )
+        dispatcher.utter_message(response="utter_faq_age", age=str(age))
         return []
 
 
@@ -190,7 +185,7 @@ class ActionGetPhone(Action):
 
 class ActionGetLinks(Action):
     def name(self) -> Text:
-        return "action_get_links"
+        return "action_get_linkedin"
 
     def run(
         self,
@@ -200,10 +195,83 @@ class ActionGetLinks(Action):
     ) -> List[EventType]:
         # intent = tracker.latest_message["intent"].get("name")
         dispatcher.utter_message(
-            response="utter_faq_links", links=str(LINKEDIN)
+            response="utter_faq_linkedin", links=str(LINKEDIN)
         )
         return []
 
+
+class ActionGetLocation(Action):
+    def name(self) -> Text:
+        return "action_get_location"
+
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> List[EventType]:
+        # intent = tracker.latest_message["intent"].get("name")
+        dispatcher.utter_message(
+            response="utter_faq_location", location=str(LOCATION)
+        )
+        return []
+
+class ActionGetTime(Action):
+    def name(self) -> Text:
+        return "action_get_time"
+
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> List[EventType]:
+        # intent = tracker.latest_message["intent"].get("name")
+        now = datetime.now().time()
+        dispatcher.utter_message(
+            response="utter_chitchat_time", time=str(now)
+        )
+        return []
+
+class ActionWhatIsMyName(Action):
+    def name(self) -> Text:
+        return "action_whatismyname"
+
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> List[EventType]:
+        nm = tracker.get_slot("name") or None
+        if nm:
+            dispatcher.utter_message(
+                response="utter_chitchat_whatismyname_name",
+                name=nm,
+            )
+        else:
+            dispatcher.utter_message(response="utter_chitchat_whatismyname_noname")
+        return []
+
+class ActionWhoAmI(Action):
+    def name(self) -> Text:
+        return "action_whoami"
+
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> List[EventType]:
+        nm = tracker.get_slot("name") or None
+        if nm:
+            dispatcher.utter_message(
+                response="utter_chitchat_whoami_name",
+                name=nm,
+            )
+        else:
+            dispatcher.utter_message(response="utter_chitchat_whoami_noname")
+        return []
 
 class ActionDefaultFallback(Action):
     def name(self) -> Text:
@@ -218,3 +286,4 @@ class ActionDefaultFallback(Action):
 
         dispatcher.utter_message(template="utter_default")
         return [UserUtteranceReverted()]
+

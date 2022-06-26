@@ -9,7 +9,7 @@ __pycache__/
 *models/*
 # C extensions
 *.so
-
+*results/*
 # Distribution / packaging
 .Python
 build/

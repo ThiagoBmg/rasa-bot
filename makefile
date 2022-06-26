@@ -7,15 +7,19 @@ api:
 	rasa run --endpoints endpoints.yml -p 8000 --cors "*"
 train: 
 	rm -rf ./models/*
-	rasa train --config ./config/config-spacyNPL.yml
+	rasa train --config ./config/config-whiteSpace.yml
 interactive:
 	make train
 	rasa interactive
 shell:
 	make train 
 	rasa shell
+test: 
+	rasa test core --stories ./tests/test_faq.yml --out results
 formatter:
 	black --verbose --config pyproject.toml actions tests
 # api test:
 # 	curl -X POST -H "Content-Type: application/json" -d '{"sender": "test_user","message": "qual é seu nome?"}' http://localhost:8000/webhooks/rest/webhook
 # python -m spacy download pt_core_news_sm
+
+# rasa train --config ./config/config-whiteSpace.yml
