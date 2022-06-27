@@ -1,0 +1,20 @@
+action_endpoint:
+  url: "http://localhost:5055/webhook"
+
+tracker_store:
+  type: SQL
+  dialect: "postgresql"
+  url: "localhost"
+  db: "rasa"
+  username: "thbmg"
+  password: "thbmg"
+
+event_broker:
+  type: "pika"
+  url: "localhost"
+  username: "thbmg"
+  password: "thbmg"
+  port: 5672
+  exchange_name: "default_exchange"
+  queues:
+    - queue_1

@@ -1,0 +1,20 @@
+action_endpoint:
+  url: "http://rasa-thiago-actions:5055/webhook"
+
+tracker_store:
+  type: SQL
+  dialect: "postgresql"
+  url: "postgresql"
+  db: "rasa"
+  username: "thbmg"
+  password: "thbmg"
+
+event_broker:
+  type: "pika"
+  url: "rabbitmq"
+  username: "thbmg"
+  password: "thbmg"
+  port: 5672
+  exchange_name: "default_exchange"
+  queues:
+    - queue_1

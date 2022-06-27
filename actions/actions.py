@@ -203,7 +203,7 @@ class ActionGetLinks(Action):
 class ActionGetLocation(Action):
     def name(self) -> Text:
         return "action_get_location"
-    
+
     def run(
         self,
         dispatcher: CollectingDispatcher,
@@ -215,6 +215,7 @@ class ActionGetLocation(Action):
             response="utter_faq_location", location=str(LOCATION)
         )
         return []
+
 
 class ActionGetTime(Action):
     def name(self) -> Text:
@@ -233,6 +234,7 @@ class ActionGetTime(Action):
         )
         return []
 
+
 class ActionWhatIsMyName(Action):
     def name(self) -> Text:
         return "action_whatismyname"
@@ -250,8 +252,11 @@ class ActionWhatIsMyName(Action):
                 name=nm,
             )
         else:
-            dispatcher.utter_message(response="utter_chitchat_whatismyname_noname")
+            dispatcher.utter_message(
+                response="utter_chitchat_whatismyname_noname"
+            )
         return []
+
 
 class ActionWhoAmI(Action):
     def name(self) -> Text:
@@ -270,8 +275,11 @@ class ActionWhoAmI(Action):
                 name=nm,
             )
         else:
-            dispatcher.utter_message(response="utter_chitchat_whoami_noname")
+            dispatcher.utter_message(
+                response="utter_chitchat_whoami_noname"
+            )
         return []
+
 
 class ActionDefaultFallback(Action):
     def name(self) -> Text:
@@ -286,4 +294,3 @@ class ActionDefaultFallback(Action):
 
         dispatcher.utter_message(template="utter_default")
         return [UserUtteranceReverted()]
-

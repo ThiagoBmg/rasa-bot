@@ -34,10 +34,6 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 
 # Copy actions code to working directory
 COPY . /app
-# COPY ./../config /app/config
-
-# Install modules from setup.py
-COPY readme.md /app
 
 # Download spacy language data
 # RUN python -m spacy download pt_core_news_lg
@@ -46,4 +42,10 @@ COPY readme.md /app
 USER 1001
 # rasa run --endpoints endpoints.yml -p 8000 --cors "*" --auth-token 0d0a3081bfff925160bbbe9755ad8c196ab51414
 # Start the action server
-CMD ["run", "--endpoints","endpoints.yml","-p", "5000", "--cors", "*", "--auth-token","0d0a3081bfff925160bbbe9755ad8c196ab51414"]
+COPY ./endpoints/docker.yml /app/endpoints.yml
+# train IA model
+# RUN rasa train \
+#   --config /app/config/config-whiteSpace.yml \
+#   --endpoints /app/endpoints/docker.yml
+
+CMD ["run", "--endpoints","/app/endpoints/docker.yml","-p", "5000", "--cors", "*", "--auth-token","0d0a3081bfff925160bbbe9755ad8c196ab51414"]
