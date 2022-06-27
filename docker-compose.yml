@@ -3,26 +3,26 @@ version: '3.5'
 services:
   rasa-actions:
     build: ./actions
-    image: bot_thiago_actions
+    image: rasa-actions
     restart: always
-    container_name: rasa-thiago-actions
+    container_name: rasa-actions
     env_file:
       - .env
     expose:
       - "5055"
-    ports: 
+    ports:
       - "5055:5055"
     networks:
       - thiagonetwork
 
   rasa-core:
     build: ./
-    image: bot_thiago_core
+    image: rasa-core
     restart: always
-    container_name: rasa-thiago-core
+    container_name: rasa-core
     env_file:
       - .env
-    ports: 
+    ports:
       - "5000:5000"
     depends_on:
       - postgresql
@@ -31,18 +31,18 @@ services:
     networks:
       - thiagonetwork
 
-  rasa-duckling:
-    image: rasa/duckling
-    container_name: rasa-thiago-duckling
-    restart: always
-    ports:
-      - "8000:8000"
-    networks:
-      - thiagonetwork
+  # rasa-duckling:
+  #   image: rasa/duckling
+  #   container_name: rasa-duckling
+  #   restart: always
+  #   ports:
+  #     - "8000:8000"
+  #   networks:
+  #     - thiagonetwork
 
   postgresql:
     image: postgres:10
-    container_name: rasa-thiago-postgres
+    container_name: rasa-postgres
     restart: always
     environment:
       - POSTGRES_USER=thbmg
@@ -59,7 +59,7 @@ services:
 
   rabbitmq:
     image: rabbitmq:3.10-management
-    container_name: rasa-thiago-rabbitmq
+    container_name: rasa-rabbitmq
     hostname: rabbitmq
     environment:
       - RABBITMQ_DEFAULT_USER=thbmg
