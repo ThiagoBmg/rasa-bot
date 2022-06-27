@@ -1,0 +1,85 @@
+version: '3.5'
+
+services:
+  rasa-actions:
+    build: ./actions
+    image: bot_thiago_actions
+    restart: always
+    container_name: rasa-thiago-actions
+    env_file:
+      - .env
+    expose:
+      - "5055"
+    ports: 
+      - "5055:5055"
+    networks:
+      - thiagonetwork
+
+  rasa-core:
+    build: ./
+    image: bot_thiago_core
+    restart: always
+    container_name: rasa-thiago-core
+    env_file:
+      - .env
+    ports: 
+      - "5000:5000"
+    depends_on:
+      - postgresql
+      - rabbitmq
+      - rasa-duckling
+    networks:
+      - thiagonetwork
+
+  rasa-duckling:
+    image: rasa/duckling
+    container_name: rasa-thiago-duckling
+    restart: always
+    ports:
+      - "8000:8000"
+    networks:
+      - thiagonetwork
+
+  postgresql:
+    image: postgres:10
+    container_name: rasa-thiago-postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=thbmg
+      - POSTGRES_PASSWORD=thbmg
+      - POSTGRES_MULTIPLE_DATABASES=rasa
+      - PGDATA=/var/lib/postgresql/data
+    volumes:
+      - ./entrypoints/postgresql-initdb:/docker-entrypoint-initdb.d
+      - database_volume:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - thiagonetwork
+
+  rabbitmq:
+    image: rabbitmq:3.10-management
+    container_name: rasa-thiago-rabbitmq
+    hostname: rabbitmq
+    environment:
+      - RABBITMQ_DEFAULT_USER=thbmg
+      - RABBITMQ_DEFAULT_PASS=thbmg
+    env_file:
+      - .env
+    expose:
+      - "5672"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitdata:/var/lib/rabbitmq
+    networks:
+      - thiagonetwork
+
+networks:
+  thiagonetwork:
+    driver: bridge
+
+volumes:
+  database_volume:
+  rabbitdata:
