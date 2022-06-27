@@ -82,7 +82,6 @@ responses:
     - text: Estou aqui, caso precise.
     - text: Conta comigo!
     - text: Magina, estou por aqui!
-
   utter_bye:
     - text: Tchau! 🤪
     - text: Adeus!
@@ -166,7 +165,7 @@ responses:
   utter_chitchat_whatspossible:
     - text: Eu consigo entender o que os humanos tentam dizer... e apenas apresento as melhores opções que tenho para apresentar.
     - text: Consigo acionar gatilhos, realizar integrações, como por exemplo... enviar e-mails, alterar um documento, validar um formulário... por ai vai!
-    - text: Eu diria que a cereja do bolo é o meu cerebro. Consigo fazer qualquer coisa que você me ensinar a fazer.
+    - text: Eu diria que a cereja do bolo é o meu cérebro. Consigo fazer qualquer coisa que você me ensinar a fazer.
   utter_chitchat_whoami_name:
     - text: Seu nome é {name}, nos conhecemos recentemente. 😀
   utter_chitchat_whoami_noname:
@@ -177,11 +176,15 @@ slots:
   name:
     type: text
     influence_conversation: false
-    mappings: []
+    mappings: [] 
+    # - type: from_entity
+    #   entity: name
   email:
     type: text
     influence_conversation: false
     mappings: []
+    # - type: from_entity
+    #   entity: email
 
 actions:
   - action_greet_user

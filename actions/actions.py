@@ -13,7 +13,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
 from rasa_sdk.events import SlotSet, EventType, UserUtteranceReverted
-from config import (
+from . import (
     EMAIL,
     FIRST_NAME,
     BIRTH_DT,

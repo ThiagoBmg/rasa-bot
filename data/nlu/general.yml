@@ -130,7 +130,7 @@ nlu:
       - nao concordo com isso
       - eu nao concordo
       - eu nao aceito
-  - intent: explain # TODO: implementar
+  - intent: explain
     examples: |
       - poderia me explicar
       - me explica
